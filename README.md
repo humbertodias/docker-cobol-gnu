@@ -1,5 +1,7 @@
 # docker-cobol-gnu
 
+Docker image based on Ubuntu that contains the GNU version of cobol compiler.
+
 ### Build
 
 ```
@@ -9,7 +11,7 @@ docker build . -t cobol-gnu
 ### Run 
 
 ```
-docker run -it -v `pwd`:/tmp cobol-gnu
+docker run -it -v `pwd`:/app cobol-gnu
 ```
 
 ### Compile
