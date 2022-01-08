@@ -35,10 +35,12 @@ Visual Code
 
 CTRL+P
 
+```
 ext install bitlang.cobol
 ext install bitlang.gnucobol
 ext install OlegKunitsyn.gnucobol-debug
 ext install webfreak.debug
+```
 
 
 ### Ref
