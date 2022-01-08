@@ -8,12 +8,12 @@ ARG COBOL_VERSION_REV=3.1.2
 
 # Cobol
 RUN wget https://ufpr.dl.sourceforge.net/project/gnucobol/gnucobol/$COBOL_VERSION/gnucobol-$COBOL_VERSION_REV.tar.xz && \
-xz -d gnucobol-$COBOL_VERSION_REV.tar.xz && \
-tar xvf gnucobol-$COBOL_VERSION_REV.tar && \
-cd gnucobol-$COBOL_VERSION_REV && \
-./configure && \
-make install && \
-cd .. && rm -rf gnucobol-*
+    xz -d gnucobol-$COBOL_VERSION_REV.tar.xz && \
+    tar xvf gnucobol-$COBOL_VERSION_REV.tar && \
+    cd gnucobol-$COBOL_VERSION_REV && \
+    ./configure && \
+    make install && \
+    cd .. && rm -rf gnucobol-*
 
 RUN adduser \
   --disabled-password \

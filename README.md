@@ -17,18 +17,32 @@ docker run -it -v `pwd`:/app cobol-gnu
 ### Compile
 
 ```
-cobc -x -o hello hello.cbl
+cobc -x -o hello.exe hello.cbl
 ```
 
 ### Run
 
 ```
-./hello
+./hello.exe
 ```
 
 HELLO, WORLD
 
 
+# Debug
+
+Visual Code
+
+CTRL+P
+
+ext install bitlang.cobol
+ext install bitlang.gnucobol
+ext install OlegKunitsyn.gnucobol-debug
+ext install webfreak.debug
+
+
 ### Ref
 
-[cobol-hello-world](https://www.ibmmainframer.com/cobol-tutorial/cobol-hello-world/)
+* [cobol-hello-world](https://www.ibmmainframer.com/cobol-tutorial/cobol-hello-world/)
+* [gnucobol-debug](https://marketplace.visualstudio.com/items?itemName=OlegKunitsyn.gnucobol-debug)
+* [visualcode-debug](http://dickens.co.in/run-cobol-vscode-msys2-windows)

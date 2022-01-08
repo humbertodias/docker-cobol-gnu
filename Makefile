@@ -5,4 +5,10 @@ run:
 	docker run -it -v `pwd`:/app cobol-gnu
 
 compile:
-	cobc -x -o hello hello.cbl
+	for f in *.cbl;\
+	do fname=`basename $$f .cbl` ;\
+	   cobc -d -x -o $$fname.exe $$f ;\
+	done
+
+clean:
+	rm -f *.exe	*.c *.h  *.i
