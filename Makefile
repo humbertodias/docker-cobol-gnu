@@ -12,3 +12,9 @@ compile:
 
 clean:
 	rm -f *.exe	*.c *.h  *.i
+
+tag:
+	docker tag cobol-gnu hldtux/cobol-gnu:latest
+
+push:	tag
+	docker push hldtux/cobol-gnu:latest
