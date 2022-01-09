@@ -19,12 +19,26 @@ cd .. && rm -rf gnucobol-*
 RUN echo "/usr/local/lib" >> /etc/ld.so.conf.d/gnu-cobol-$COBOL_VERSION_REV.conf && \
 ldconfig
 
+# Create new user `cobol` and disable 
+# password and gecos for later
+# --gecos explained well here:
+# https://askubuntu.com/a/1195288/635348
 RUN adduser \
   --disabled-password \
   --home /app \
   --gecos '' cobol \
   && chown -R cobol /app
 
+#  Add new user docker to sudo group
+RUN adduser cobol sudo
+
+# Ensure sudo group users are not 
+# asked for a password when using 
+# sudo command by ammending sudoers file
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# now we can set USER to the 
+# user we just created
 USER cobol
 
 WORKDIR /app
