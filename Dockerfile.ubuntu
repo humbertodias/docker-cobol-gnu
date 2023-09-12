@@ -5,8 +5,8 @@ RUN apt update -y \
  && apt install -y wget xz-utils make build-essential vim-tiny nano sudo libgmp-dev libdb-dev libncurses5-dev libncursesw5-dev \
  && apt clean
 
-ARG COBOL_VERSION=3.1
-ARG COBOL_VERSION_REV=3.1.2
+ARG COBOL_VERSION=3.2
+ARG COBOL_VERSION_REV=3.2
 
 # Cobol
 RUN wget --no-check-certificate https://ufpr.dl.sourceforge.net/project/gnucobol/gnucobol/$COBOL_VERSION/gnucobol-$COBOL_VERSION_REV.tar.xz \
