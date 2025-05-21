@@ -4,25 +4,25 @@ Docker image that contains a GNU version of cobol compiler.
 
 ### Build
 
-```
+```sh
 docker build . -t cobol-gnu
 ```
 
 ### Run 
 
-```
+```sh
 docker run -it -v `pwd`:/app cobol-gnu
 ```
 
 ### Compile
 
-```
+```sh
 cobc -x -o hello.exe hello.cbl
 ```
 
 ### Run
 
-```
+```sh
 ./hello.exe
 ```
 
@@ -35,7 +35,7 @@ Visual Code
 
 CTRL+P
 
-```
+```sh
 ext install bitlang.cobol
 ext install bitlang.gnucobol
 ext install OlegKunitsyn.gnucobol-debug
