@@ -5,9 +5,10 @@ RUN apk --no-cache add wget xz make vim nano sudo build-base ncurses-dev db-dev 
 
 ARG COBOL_VERSION=3.2
 ARG COBOL_VERSION_REV=3.2
+ARG COBOL_URL_TAR_XZ=https://netactuate.dl.sourceforge.net/project/gnucobol/gnucobol/$COBOL_VERSION/gnucobol-$COBOL_VERSION_REV.tar.xz
 
 # Cobol
-RUN wget --no-check-certificate https://netactuate.dl.sourceforge.net/project/gnucobol/gnucobol/$COBOL_VERSION/gnucobol-$COBOL_VERSION_REV.tar.xz \
+RUN wget --no-check-certificate ${COBOL_URL_TAR_XZ} \
  && xz -d gnucobol-$COBOL_VERSION_REV.tar.xz \
  && tar xvf gnucobol-$COBOL_VERSION_REV.tar \
  && cd gnucobol-$COBOL_VERSION_REV \
